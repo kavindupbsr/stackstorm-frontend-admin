@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage';
 import InventoryPage from './pages/InventoryPage';
 import OrdersFulfillmentPage from './pages/OrdersFulfillmentPage';
 import ReturnsReviewPage from './pages/ReturnsReviewPage';
+import LoyaltyConsolePage from './pages/LoyaltyConsolePage';
 import './styles/admin-tokens.css';
 import './styles/admin-global.css';
 
@@ -76,22 +77,8 @@ function AdminAppContent() {
         {/* View 4: 30-Day Returns */}
         {currentTab === 'returns' && <ReturnsReviewPage />}
 
-        {/* View 5: Loyalty Tiers */}
-        {currentTab === 'loyalty' && (
-          <div className="admin-view">
-            <h1 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-2)' }}>
-              Customer Loyalty Tier Oversight
-            </h1>
-            <p style={{ marginBottom: 'var(--space-6)' }}>
-              Review Silver, Gold, and Platinum tier distributions and manage the 2-quarter grace period.
-            </p>
-            <div className="admin-card">
-              <p style={{ color: 'var(--admin-text-muted)' }}>
-                Loyalty tier grace period downgrade manager (STORM-FE-020).
-              </p>
-            </div>
-          </div>
-        )}
+        {/* View 5: Loyalty Tiers & 2-Quarter Grace Period */}
+        {currentTab === 'loyalty' && <LoyaltyConsolePage />}
 
         {/* View 6: Live Support Chat */}
         {currentTab === 'support' && (

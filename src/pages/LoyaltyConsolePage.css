@@ -1,0 +1,393 @@
+/* Loyalty Console Page Styles */
+.loyalty-console-page {
+  padding-bottom: var(--space-8, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6, 1.5rem);
+}
+
+/* Toast Banner */
+.loyalty-toast-banner {
+  position: fixed;
+  top: 72px;
+  right: 24px;
+  background: #0EA5E9;
+  color: #0F172A;
+  padding: 12px 20px;
+  border-radius: var(--radius-lg, 0.75rem);
+  font-weight: 600;
+  font-size: var(--text-sm, 0.875rem);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.45);
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-icon {
+  color: #0F172A;
+}
+
+.toast-close-btn {
+  background: transparent;
+  border: none;
+  color: #0F172A;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0 4px;
+}
+
+/* Header */
+.loyalty-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-4, 1rem);
+}
+
+.header-badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: 6px;
+}
+
+.live-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ADE80;
+  padding: 2px 8px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.live-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 6px #22C55E;
+}
+
+.module-owner-tag {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--admin-text-muted, #94A3B8);
+}
+
+.loyalty-page-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: var(--text-2xl, 1.5rem);
+  font-weight: 700;
+  color: var(--admin-text-main, #F8FAFC);
+  margin: 0 0 4px 0;
+}
+
+.loyalty-page-subtitle {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--admin-text-muted, #94A3B8);
+  margin: 0;
+  max-width: 680px;
+}
+
+.header-actions-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+}
+
+.refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid var(--admin-border, #1E293B);
+  color: var(--admin-text-muted, #94A3B8);
+  padding: 8px 14px;
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: rgba(51, 65, 85, 0.6);
+  color: var(--admin-text-main, #F8FAFC);
+}
+
+.audit-sweep-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+.audit-sweep-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+  transform: translateY(-1px);
+}
+
+.audit-sweep-btn:disabled,
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* KPI Cards Grid */
+.loyalty-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4, 1rem);
+}
+
+.kpi-card {
+  background: var(--admin-card, #151D2F);
+  border: 1px solid var(--admin-border, #1E293B);
+  border-radius: var(--radius-xl, 1rem);
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4, 1rem);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.kpi-warning-card {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.04) 0%, rgba(21, 29, 47, 1) 100%);
+}
+
+.kpi-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg, 0.75rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-icon-wrap.total {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+}
+
+.kpi-icon-wrap.silver {
+  background: rgba(148, 163, 184, 0.15);
+  color: #CBD5E1;
+}
+
+.kpi-icon-wrap.gold {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FCD34D;
+}
+
+.kpi-icon-wrap.platinum {
+  background: rgba(168, 85, 247, 0.15);
+  color: #D8B4FE;
+}
+
+.kpi-icon-wrap.warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--admin-text-muted, #94A3B8);
+}
+
+.kpi-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--admin-text-main, #F8FAFC);
+  line-height: 1.2;
+}
+
+.kpi-sub {
+  font-size: 0.7rem;
+  color: var(--admin-text-muted, #94A3B8);
+  margin-top: 2px;
+}
+
+.text-amber {
+  color: #F59E0B;
+}
+
+.text-red {
+  color: #EF4444;
+}
+
+/* Middle Grid: Donut + Policy Card */
+.loyalty-middle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4, 1rem);
+}
+
+@media (max-width: 900px) {
+  .loyalty-middle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.policy-rule-card {
+  background: var(--admin-card, #151D2F);
+  border: 1px solid var(--admin-border, #1E293B);
+  border-radius: var(--radius-xl, 1rem);
+  padding: var(--space-5, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+}
+
+.policy-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.policy-icon {
+  color: #38BDF8;
+}
+
+.policy-title {
+  font-size: var(--text-base, 1rem);
+  font-weight: 700;
+  color: var(--admin-text-main, #F8FAFC);
+  margin: 0;
+}
+
+.policy-desc {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--admin-text-muted, #94A3B8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.policy-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+  margin-top: 4px;
+}
+
+.policy-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.4);
+  padding: 8px 12px;
+  border-radius: var(--radius-md, 0.5rem);
+  border-left: 3px solid var(--admin-border, #1E293B);
+}
+
+.policy-step:nth-child(1) {
+  border-left-color: #F59E0B;
+}
+
+.policy-step:nth-child(2) {
+  border-left-color: #EF4444;
+}
+
+.policy-step:nth-child(3) {
+  border-left-color: #38BDF8;
+}
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-num.step-1 {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FCD34D;
+}
+
+.step-num.step-2 {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+}
+
+.step-num.step-3 {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38BDF8;
+}
+
+.step-content {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--admin-text-muted, #94A3B8);
+}
+
+.step-content strong {
+  color: var(--admin-text-main, #F8FAFC);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.step-content p {
+  margin: 0;
+}
