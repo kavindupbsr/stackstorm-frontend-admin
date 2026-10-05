@@ -1,0 +1,165 @@
+/* Loyalty Distribution Chart Styles */
+.loyalty-chart-card {
+  background: var(--admin-card, #151D2F);
+  border: 1px solid var(--admin-border, #1E293B);
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: var(--space-5, 1.25rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.chart-title-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+}
+
+.title-icon {
+  padding: 8px;
+  border-radius: var(--radius-md, 0.5rem);
+  background: var(--admin-accent-subtle, rgba(212, 175, 55, 0.15));
+  color: var(--admin-accent, #D4AF37);
+  display: flex;
+}
+
+.chart-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--admin-text, #F8FAFC);
+  margin: 0;
+}
+
+.chart-sub {
+  font-size: 0.75rem;
+  color: var(--admin-text-muted, #94A3B8);
+  margin: 2px 0 0 0;
+}
+
+.donut-content-layout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8, 2rem);
+  flex-wrap: wrap;
+}
+
+.donut-svg-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+
+.donut-center-badge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.center-count {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--admin-text, #F8FAFC);
+  line-height: 1;
+}
+
+.center-label {
+  font-size: 0.7rem;
+  color: var(--admin-text-subtle, #64748B);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.donut-legend-list {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--admin-bg, #0B0F19);
+  border: 1px solid var(--admin-border, #1E293B);
+  border-radius: var(--radius-sm, 0.25rem);
+}
+
+.legend-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-silver {
+  background: #94A3B8;
+  box-shadow: 0 0 8px rgba(148, 163, 184, 0.5);
+}
+
+.dot-gold {
+  background: #D4AF37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.dot-platinum {
+  background: #38BDF8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+.legend-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.legend-tier-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--admin-text, #F8FAFC);
+}
+
+.legend-threshold {
+  font-size: 0.68rem;
+  color: var(--admin-text-subtle, #64748B);
+}
+
+.legend-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.legend-count {
+  font-size: 0.75rem;
+  color: var(--admin-text-muted, #94A3B8);
+}
+
+.legend-pct {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--admin-text, #F8FAFC);
+}
