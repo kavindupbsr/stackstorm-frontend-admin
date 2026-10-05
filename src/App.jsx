@@ -4,6 +4,8 @@ import { AdminAuthProvider, useAdminAuth } from './context/AdminAuthContext';
 import AdminRoute from './routes/AdminRoute';
 import DashboardPage from './pages/DashboardPage';
 import InventoryPage from './pages/InventoryPage';
+import OrdersFulfillmentPage from './pages/OrdersFulfillmentPage';
+import ReturnsReviewPage from './pages/ReturnsReviewPage';
 import './styles/admin-tokens.css';
 import './styles/admin-global.css';
 
@@ -69,38 +71,10 @@ function AdminAppContent() {
         {currentTab === 'inventory' && <InventoryPage />}
 
         {/* View 3: Order Fulfillment */}
-        {currentTab === 'orders' && (
-          <div className="admin-view">
-            <h1 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-2)' }}>
-              Order Fulfillment Console
-            </h1>
-            <p style={{ marginBottom: 'var(--space-6)' }}>
-              Advance orders through Placed, Processing, Shipped, and Delivered milestones.
-            </p>
-            <div className="admin-card">
-              <p style={{ color: 'var(--admin-text-muted)' }}>
-                Order status transitions and delivery timestamp logging (STORM-FE-019).
-              </p>
-            </div>
-          </div>
-        )}
+        {currentTab === 'orders' && <OrdersFulfillmentPage />}
 
         {/* View 4: 30-Day Returns */}
-        {currentTab === 'returns' && (
-          <div className="admin-view">
-            <h1 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-2)' }}>
-              30-Day Delivery Return & Exchange Approvals
-            </h1>
-            <p style={{ marginBottom: 'var(--space-6)' }}>
-              Inspect customer photographic proof and approve returns strictly within 30 days of delivery date.
-            </p>
-            <div className="admin-card">
-              <p style={{ color: 'var(--admin-text-muted)' }}>
-                Returns policy audit and refund/exchange dispatch engine (STORM-FE-019).
-              </p>
-            </div>
-          </div>
-        )}
+        {currentTab === 'returns' && <ReturnsReviewPage />}
 
         {/* View 5: Loyalty Tiers */}
         {currentTab === 'loyalty' && (
