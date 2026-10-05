@@ -7,6 +7,7 @@ import InventoryPage from './pages/InventoryPage';
 import OrdersFulfillmentPage from './pages/OrdersFulfillmentPage';
 import ReturnsReviewPage from './pages/ReturnsReviewPage';
 import LoyaltyConsolePage from './pages/LoyaltyConsolePage';
+import SupportConsolePage from './pages/SupportConsolePage';
 import './styles/admin-tokens.css';
 import './styles/admin-global.css';
 
@@ -80,22 +81,8 @@ function AdminAppContent() {
         {/* View 5: Loyalty Tiers & 2-Quarter Grace Period */}
         {currentTab === 'loyalty' && <LoyaltyConsolePage />}
 
-        {/* View 6: Live Support Chat */}
-        {currentTab === 'support' && (
-          <div className="admin-view">
-            <h1 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-2)' }}>
-              Real-Time Support Agent Console
-            </h1>
-            <p style={{ marginBottom: 'var(--space-6)' }}>
-              Accept active customer chat sessions, answer inquiries, and view real-time typing indicators.
-            </p>
-            <div className="admin-card">
-              <p style={{ color: 'var(--admin-text-muted)' }}>
-                Socket.IO bi-directional agent support queue (STORM-FE-022).
-              </p>
-            </div>
-          </div>
-        )}
+        {/* View 6: Live Support Chat & Agent Console (STORM-FE-022) */}
+        {currentTab === 'support' && <SupportConsolePage />}
       </AdminLayout>
     </AdminRoute>
   );
