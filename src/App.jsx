@@ -3,6 +3,7 @@ import AdminLayout from './components/layout/AdminLayout';
 import { AdminAuthProvider, useAdminAuth } from './context/AdminAuthContext';
 import AdminRoute from './routes/AdminRoute';
 import DashboardPage from './pages/DashboardPage';
+import InventoryPage from './pages/InventoryPage';
 import './styles/admin-tokens.css';
 import './styles/admin-global.css';
 
@@ -65,21 +66,7 @@ function AdminAppContent() {
         )}
 
         {/* View 2: Inventory & SKUs */}
-        {currentTab === 'inventory' && (
-          <div className="admin-view">
-            <h1 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-2)' }}>
-              Inventory & SKU Restock Matrix
-            </h1>
-            <p style={{ marginBottom: 'var(--space-6)' }}>
-              Monitor on-hand inventory, 15-minute temporary reservations, and execute stock adjustments.
-            </p>
-            <div className="admin-card">
-              <p style={{ color: 'var(--admin-text-muted)' }}>
-                Inventory restock management matrix connected to POST /api/v1/inventory/adjust (STORM-FE-018).
-              </p>
-            </div>
-          </div>
-        )}
+        {currentTab === 'inventory' && <InventoryPage />}
 
         {/* View 3: Order Fulfillment */}
         {currentTab === 'orders' && (
